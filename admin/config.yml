@@ -1,0 +1,68 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "imagenes"
+public_folder: "/imagenes"
+
+# Importante: Esto hace que se recargue automáticamente
+publish_mode: editorial_workflow
+
+collections:
+  - name: "configuracion"
+    label: "Configuración General"
+    files:
+      - label: "Información del Sitio"
+        name: "info"
+        file: "content/info.json"
+        fields:
+          - {label: "Nombre de la Empresa", name: "nombre_empresa", widget: "string"}
+          - {label: "Eslogan", name: "eslogan", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Teléfono", name: "telefono", widget: "string"}
+          - {label: "Dirección", name: "direccion", widget: "string"}
+          - {label: "Horario", name: "horario", widget: "string"}
+          - {label: "Facebook URL", name: "facebook", widget: "string", required: false}
+          - {label: "Instagram URL", name: "instagram", widget: "string", required: false}
+          - {label: "WhatsApp", name: "whatsapp", widget: "string", required: false}
+          - {label: "Logo", name: "logo", widget: "image", required: false}
+          - {label: "Imagen de Portada", name: "imagen_portada", widget: "image"}
+          - {label: "Imagen Quiénes Somos", name: "imagen_nosotros", widget: "image"}
+      
+      - label: "Quiénes Somos"
+        name: "nosotros"
+        file: "content/nosotros.json"
+        fields:
+          - {label: "Título", name: "titulo", widget: "string", default: "Quiénes Somos"}
+          - {label: "Párrafo 1", name: "parrafo1", widget: "text"}
+          - {label: "Párrafo 2", name: "parrafo2", widget: "text"}
+
+  - name: "servicios"
+    label: "Servicios"
+    label_singular: "Servicio"
+    folder: "content/servicios"
+    create: true
+    identifier_field: "titulo"
+    slug: "servicio-{{fields.orden}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - {label: "Título", name: "titulo", widget: "string"}
+      - {label: "Descripción", name: "descripcion", widget: "text"}
+      - {label: "Ícono (Emoji)", name: "icono", widget: "string", default: "🔧", hint: "Copia y pega un emoji: 🔧 ⚙️ 🛠️ 🏗️ 📐 ✨"}
+      - {label: "Orden", name: "orden", widget: "number", default: 1, value_type: "int", min: 1, hint: "Posición en la que aparecerá (1, 2, 3, etc.)"}
+
+  - name: "trabajos"
+    label: "Trabajos Realizados"
+    label_singular: "Trabajo"
+    folder: "content/trabajos"
+    create: true
+    identifier_field: "titulo"
+    slug: "trabajo-{{fields.orden}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - {label: "Título", name: "titulo", widget: "string"}
+      - {label: "Descripción", name: "descripcion", widget: "text"}
+      - {label: "Imagen", name: "imagen", widget: "image"}
+      - {label: "Orden", name: "orden", widget: "number", default: 1, value_type: "int", min: 1, hint: "Posición en la que aparecerá (1, 2, 3, etc.)"}

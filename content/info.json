@@ -1,0 +1,14 @@
+{
+  "nombre_empresa": "Tu Empresa",
+  "eslogan": "Tu eslogan o descripción breve aquí",
+  "email": "tuemail@empresa.com",
+  "telefono": "+598 XX XXX XXX",
+  "direccion": "Tu Ciudad, Tu País",
+  "horario": "Lun - Vie: 8:00 - 18:00",
+  "facebook": "https://facebook.com/tupagina",
+  "instagram": "https://instagram.com/tuusuario",
+  "whatsapp": "+598XXXXXXXXX",
+  "logo": "",
+  "imagen_portada": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1600",
+  "imagen_nosotros": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800"
+}
