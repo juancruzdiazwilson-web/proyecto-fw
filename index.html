@@ -378,6 +378,40 @@
                 grid-template-columns: 1fr;
             }
         }
+        .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25D366;
+        color: white;
+        padding: 0.9rem 1.2rem;
+        border-radius: 50px;
+        font-weight: bold;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        z-index: 9999;
+        transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .whatsapp-float:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+        }
+
+        .whatsapp-float span {
+        font-size: 1.3rem;
+        }
+
+        @media (max-width: 600px) {
+            .whatsapp-float {
+            padding: 0.8rem 1rem;
+            font-size: 0.9rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -679,5 +713,14 @@
             });
         }
     </script>
+    
+    <a href="https://wa.me/5989XXXXXXXX"
+   target="_blank"
+   class="whatsapp-float"
+   aria-label="Comunicate directamente por WhatsApp">
+   <span>💬</span>
+   Comunicate directamente por WSP
+    </a>
+
 </body>
 </html>
